@@ -61,6 +61,12 @@ function Login() {
     const status = resp.status;
     console.log(status);
     if (status === 201) {
+      const data = await resp.json();
+      const token = data.token;
+
+      // Store the JWT token in localStorage (or sessionStorage if preferred)
+      localStorage.setItem("jwtoken", token);
+
       dispatch({ type: "PARTNER", payload: true });
       // window.alert("Logged in Successfully");
       navigate("/home");
