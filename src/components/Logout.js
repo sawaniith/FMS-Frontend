@@ -12,7 +12,7 @@ const Logout = () => {
 
   useEffect(() => {
 
-    fetch(`${BASE_URL}/logout`, {
+    fetch(`/logout`, {
       method: "GET",
       headers: {
         Accept: "application/json",

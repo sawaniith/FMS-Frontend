@@ -46,7 +46,7 @@ const Reset = () => {
             return
         }
 
-        const resp = await fetch(`${BASE_URL}/reset`, {
+        const resp = await fetch(`/reset`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

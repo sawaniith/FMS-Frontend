@@ -98,7 +98,7 @@ function Signup() {
     const { name, email, phone, password, cpassword } = partner;
 
     console.log(name,email, phone, password, cpassword );
-    const resp = await fetch(`${BASE_URL}/signup`, {
+    const resp = await fetch(`/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

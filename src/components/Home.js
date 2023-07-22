@@ -47,7 +47,7 @@ const Home = () => {
   const getFarmer = async () => {
 
     try {
-      const res = await fetch(`${BASE_URL}/getfarmer`, {
+      const res = await fetch(`/getfarmer`, {
         method: "GET",
         // body: JSON.stringify({panchayat: panchayt}),
         headers: {

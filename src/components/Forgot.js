@@ -56,7 +56,7 @@ const Forgot = () => {
         }
           
 
-        const resp = await fetch(`${BASE_URL}/forgot`, {
+        const resp = await fetch(`/forgot`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

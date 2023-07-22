@@ -46,7 +46,7 @@ function Login() {
       return
     }
 
-    const resp = await fetch(`${BASE_URL}/login`, {
+    const resp = await fetch(`/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
