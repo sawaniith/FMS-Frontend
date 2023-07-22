@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { PartnerContext } from '../App';
 import '../styles/globals.css'
+import {BASE_URL} from '../helper'
 
 const Forgot = () => {
 
@@ -55,7 +56,7 @@ const Forgot = () => {
         }
           
 
-        const resp = await fetch("/forgot", {
+        const resp = await fetch(`${BASE_URL}/forgot`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

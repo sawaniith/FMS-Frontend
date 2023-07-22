@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {PartnerContext} from '../App';
+import {BASE_URL} from '../helper'
 
 const Logout = () => {
 
@@ -11,7 +12,7 @@ const Logout = () => {
 
   useEffect(() => {
 
-    fetch('/logout', {
+    fetch(`${BASE_URL}/logout`, {
       method: "GET",
       headers: {
         Accept: "application/json",

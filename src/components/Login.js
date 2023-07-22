@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
 import '../styles/globals.css'
+import {BASE_URL} from '../helper'
 
 function Login() {
 
@@ -45,7 +46,7 @@ function Login() {
       return
     }
 
-    const resp = await fetch("/login", {
+    const resp = await fetch(`${BASE_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

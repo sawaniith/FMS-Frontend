@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
 import '../styles/globals.css'
 import * as XLSX from 'xlsx';
-
+import {BASE_URL} from '../helper'
 
 const Filters = () => {
 
@@ -47,7 +47,7 @@ const Filters = () => {
     const getFarmer = async () => {
 
         try {
-            const res = await fetch('/getfarmer', {
+            const res = await fetch(`${BASE_URL}/getfarmer`, {
                 method: "GET",
                 // body: JSON.stringify({panchayat: panchayt}),
                 headers: {

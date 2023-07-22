@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/globals.css'
+import {BASE_URL} from '../helper'
 
 function Signup() {
+  console.log("hi")
   const navigate = useNavigate();
   const [partner, setPartner] = useState({
     name: "",
@@ -96,7 +98,7 @@ function Signup() {
     const { name, email, phone, password, cpassword } = partner;
 
     console.log(name,email, phone, password, cpassword );
-    const resp = await fetch("/signup", {
+    const resp = await fetch(`${BASE_URL}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

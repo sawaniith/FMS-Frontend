@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
 import '../styles/globals.css'
+import {BASE_URL} from '../helper'
 
 const EditCoupon = () => {
 
@@ -445,7 +446,7 @@ const EditCoupon = () => {
             payment_install } = farmer;
 
 
-        const response = await fetch('/edit', {
+        const response = await fetch(`${BASE_URL}/edit`, {
             method: 'POST',
             body: JSON.stringify({
                 _id,
