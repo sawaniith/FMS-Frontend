@@ -446,7 +446,7 @@ const EditCoupon = () => {
             payment_install } = farmer;
 
 
-        const response = await fetch(`/edit`, {
+        const response = await fetch(`${BASE_URL}/edit`, {
             method: 'POST',
             body: JSON.stringify({
                 _id,

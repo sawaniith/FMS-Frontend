@@ -129,7 +129,7 @@ const CreateCoupon = () => {
 
     const callCreate = async () => {
         try {
-            const res = await fetch(`/getdata`, {
+            const res = await fetch(`${BASE_URL}/getdata`, {
                 method: "GET",
                 headers: {
                     // Accept:"application/json",
@@ -424,7 +424,7 @@ const CreateCoupon = () => {
 
         // console.log(checked);
 
-        const response = await fetch(`/create`, {
+        const response = await fetch(`${BASE_URL}/create`, {
             method: 'POST',
             body: JSON.stringify({
                 partner,

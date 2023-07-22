@@ -47,7 +47,7 @@ const Filters = () => {
     const getFarmer = async () => {
 
         try {
-            const res = await fetch(`/getfarmer`, {
+            const res = await fetch(`${BASE_URL}/getfarmer`, {
                 method: "GET",
                 // body: JSON.stringify({panchayat: panchayt}),
                 headers: {
