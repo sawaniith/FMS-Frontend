@@ -5,7 +5,7 @@ import '../styles/globals.css'
 import {BASE_URL} from '../helper'
 
 function Signup() {
-  console.log("hi")
+
   const navigate = useNavigate();
   const [partner, setPartner] = useState({
     name: "",
