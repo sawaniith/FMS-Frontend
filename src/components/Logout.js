@@ -12,24 +12,24 @@ const Logout = () => {
 
   useEffect(() => {
 
-    fetch(`${BASE_URL}/logout`, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      credentials: "include"
-    }).then((res) => {
+    // fetch(`${BASE_URL}/logout`, {
+    //   method: "GET",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json"
+    //   },
+    //   credentials: "include"
+    // }).then((res) => {
       localStorage.removeItem("jwtoken");
       dispatch({type:"PARTNER", payload: false});
       navigate("/");
-      if (res.status !== 200) {
-        const error = new Error(res.error);
-        throw error;
-      }
-    }).catch((err) => {
-      console.log(err);
-    })
+      // if (res.status !== 200) {
+      //   const error = new Error(res.error);
+      //   throw error;
+      // }
+    // }).catch((err) => {
+    //   console.log(err);
+    // })
   });
 
 
