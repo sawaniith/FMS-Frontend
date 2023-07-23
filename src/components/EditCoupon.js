@@ -232,6 +232,10 @@ const EditCoupon = () => {
         return errors;
     }
 
+    const getJWTToken = () => {
+        return localStorage.getItem("jwtoken");
+    };
+
     const submit = async (e) => {
         e.preventDefault();
 
@@ -446,6 +450,7 @@ const EditCoupon = () => {
             payment_install } = farmer;
 
 
+        const jwtToken = getJWTToken()
         const response = await fetch(`${BASE_URL}/edit`, {
             method: 'POST',
             body: JSON.stringify({
@@ -477,8 +482,8 @@ const EditCoupon = () => {
             }),
 
             headers: {
-                'Content-Type': 'application/json',
-                // Accept: 'application/json'
+                "Authorization": `Bearer ${jwtToken}`,
+                'Content-Type': 'application/json'
             }
         })
 

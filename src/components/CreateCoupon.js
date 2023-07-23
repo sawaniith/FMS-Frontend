@@ -127,12 +127,18 @@ const CreateCoupon = () => {
         element.setCustomValidity("")
     };
 
+    const getJWTToken = () => {
+        return localStorage.getItem("jwtoken");
+    };
+    
+    const jwtToken = getJWTToken()
+
     const callCreate = async () => {
         try {
             const res = await fetch(`${BASE_URL}/getdata`, {
                 method: "GET",
                 headers: {
-                    // Accept:"application/json",
+                    "Authorization": `Bearer ${jwtToken}`,
                     "Content-Type": "application/json"
                 },
                 // credentials:"include"
@@ -454,8 +460,8 @@ const CreateCoupon = () => {
             }),
 
             headers: {
-                'Content-Type': 'application/json',
-                // Accept: 'application/json'
+                "Authorization": `Bearer ${jwtToken}`,
+                'Content-Type': 'application/json'
             }
         })
 

@@ -10,12 +10,17 @@ const Logout = () => {
 
   const navigate = useNavigate();
 
+  const getJWTToken = () => {
+    return localStorage.getItem("jwtoken");
+  };
+
+  const jwtToken = getJWTToken()
   useEffect(() => {
 
     fetch(`${BASE_URL}/logout`, {
       method: "GET",
       headers: {
-        Accept: "application/json",
+        "Authorization": `Bearer ${jwtToken}`,
         "Content-Type": "application/json"
       },
       credentials: "include"

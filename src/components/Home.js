@@ -43,31 +43,14 @@ const Home = () => {
   ]);
 
   const navigate = useNavigate();
-
-  // const getCookie = async(cookieName) => {
-  //   const name = cookieName + "=";
-  //   const decodedCookie = decodeURIComponent(document.cookie);
-  //   const cookieArray = decodedCookie.split(";");
-  
-  //   for (let i = 0; i < cookieArray.length; i++) {
-  //     let cookie = cookieArray[i].trim();
-  //     if (cookie.indexOf(name) === 0) {
-  //       return cookie.substring(name.length, cookie.length);
-  //     }
-  //   }
-  //   return null; // Return null if the cookie with the given name is not found
-  // }
   
   const getJWTToken = () => {
-    // Replace "your_jwt_storage_key" with the key you used to store the JWT token in localStorage
-    // For example, if you used localStorage.setItem("jwtToken", token), then the key would be "jwtToken"
     return localStorage.getItem("jwtoken");
   };
 
   const getFarmer = async () => {
 
     try {
-      // const jwtToken = await getCookie("jwtoken")
       const jwtToken = getJWTToken()
 
       const res = await fetch(`${BASE_URL}/getfarmer`, {

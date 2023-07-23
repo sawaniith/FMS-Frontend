@@ -30,6 +30,10 @@ const Forgot = () => {
         return errors
     }
 
+    const getJWTToken = () => {
+        return localStorage.getItem("jwtoken");
+    };
+
     const continu = async (e) => {
         e.preventDefault();
         let valid = validate(name, email, phone)
@@ -56,10 +60,12 @@ const Forgot = () => {
         }
           
 
+        const jwtToken = getJWTToken()
         const resp = await fetch(`${BASE_URL}/forgot`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Authorization": `Bearer ${jwtToken}`,
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 name,

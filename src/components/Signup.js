@@ -56,6 +56,10 @@ function Signup() {
     return errors
   }
 
+  const getJWTToken = () => {
+    return localStorage.getItem("jwtoken");
+  };
+
   const postData = async (e) => {
     e.preventDefault();
     let valid = validate(partner)
@@ -98,10 +102,12 @@ function Signup() {
     const { name, email, phone, password, cpassword } = partner;
 
     console.log(name,email, phone, password, cpassword );
+    const jwtToken = getJWTToken()
     const resp = await fetch(`${BASE_URL}/signup`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Authorization": `Bearer ${jwtToken}`,
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         name,

@@ -44,14 +44,19 @@ const Filters = () => {
 
     const navigate = useNavigate();
 
+    const getJWTToken = () => {
+        return localStorage.getItem("jwtoken");
+    };
+
     const getFarmer = async () => {
 
         try {
+            const jwtToken = getJWTToken()
             const res = await fetch(`${BASE_URL}/getfarmer`, {
                 method: "GET",
                 // body: JSON.stringify({panchayat: panchayt}),
                 headers: {
-                    // Accept:"application/json",
+                    "Authorization": `Bearer ${jwtToken}`,
                     "Content-Type": "application/json"
                 },
                 // credentials:"include"
