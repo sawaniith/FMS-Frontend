@@ -130,7 +130,7 @@ const CreateCoupon = () => {
     const getJWTToken = () => {
         return localStorage.getItem("jwtoken");
     };
-
+    
     const jwtToken = getJWTToken()
 
     const callCreate = async () => {
@@ -138,6 +138,7 @@ const CreateCoupon = () => {
             const res = await fetch(`${BASE_URL}/getdata`, {
                 method: "GET",
                 headers: {
+                    "Authorization": `Bearer ${jwtToken}`,
                     "Content-Type": "application/json"
                 },
                 // credentials:"include"
