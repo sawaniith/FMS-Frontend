@@ -25,6 +25,7 @@ const Logout = () => {
       },
       credentials: "include"
     }).then((res) => {
+      localStorage.removeItem("jwtoken");
       dispatch({type:"PARTNER", payload: false});
       navigate("/");
       if (res.status !== 200) {
