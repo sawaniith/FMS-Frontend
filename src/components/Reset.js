@@ -27,10 +27,6 @@ const Reset = () => {
         return errors
     }
 
-    const getJWTToken = () => {
-        return localStorage.getItem("jwtoken");
-    };
-
     const reset = async (e) => {
         e.preventDefault();
 
@@ -50,12 +46,10 @@ const Reset = () => {
             return
         }
 
-        const jwtToken = getJWTToken()
         const resp = await fetch(`${BASE_URL}/reset`, {
             method: "POST",
             headers: {
-                "Authorization": `Bearer ${jwtToken}`,
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 name,
