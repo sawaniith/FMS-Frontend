@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
 import '../styles/globals.css'
 import * as XLSX from 'xlsx';
-import {BASE_URL} from '../helper'
+import { BASE_URL } from '../helper'
 
 const Filters = () => {
 
@@ -76,7 +76,9 @@ const Filters = () => {
         }
     }
 
-    getFarmer()
+    useEffect(() => {
+        getFarmer();
+    }, []);
 
     const string = (arr) => {
         let str = arr.toString();

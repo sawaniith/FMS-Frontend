@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PartnerContext } from '../App';
 import '../styles/globals.css'
-import {BASE_URL} from '../helper'
+import { BASE_URL } from '../helper'
 
 const Home = () => {
 
@@ -43,7 +43,7 @@ const Home = () => {
   ]);
 
   const navigate = useNavigate();
-  
+
   const getJWTToken = () => {
     return localStorage.getItem("jwtoken");
   };
